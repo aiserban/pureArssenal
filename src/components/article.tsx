@@ -1,20 +1,11 @@
 import * as React from 'react';
-import {useLinkProps, useNavigation} from '@react-navigation/native';
-import {Component, useState, useEffect} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  ActivityIndicator,
-  Pressable,
-  ScrollView,
-  RefreshControl,
-  PlatformColor,
-} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {useState, useEffect} from 'react';
+import {View, Text, Image, Pressable, PlatformColor} from 'react-native';
 
 import {ReadList} from '../data/data';
 import {StyleSheet} from 'react-native';
-import {FeedItemModel} from '../models/FeedItemModel';
+import {FeedItemModel} from '../models/feedItemModel';
 
 export const Article = (props: any) => {
   const navigation = useNavigation();

@@ -64,33 +64,3 @@ export const ArticleList = (props: any) => {
     </View>
   );
 };
-
-// todo should not get items in exclussions, need to filter them after we have a list
-// export const FilterOutExclussions = async (): Promise<FeedItem[]> => {
-//     let curratedArticles: FeedItem[] = []
-
-//     for (let index = 0; index < FeedListUrls.length; index++) {
-//         const url = FeedListUrls[index];
-
-//         let items = await getFeedItems(url);
-//         if (Exclussions.length !== 0) {
-//             items.forEach((article: FeedItem) => {
-//                 // TODO should split words first
-//                 if (!Exclussions.some(word => article.title.toLowerCase().includes(word.toLowerCase()))) {
-//                     curratedArticles.push(article);
-//                 }
-//             })
-//         }
-//         else {
-//             curratedArticles = curratedArticles.concat(items);
-//         }
-
-//     }
-//     console.log(curratedArticles[0].published);
-//     console.log(new Date(curratedArticles[0].published));
-//     curratedArticles.sort((a, b) => {
-//         return new Date(b.published).getTime() - new Date(a.published).getTime();
-//     });
-
-//     return curratedArticles;
-// }

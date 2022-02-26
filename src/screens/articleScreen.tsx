@@ -1,19 +1,8 @@
 import * as React from 'react';
-import {
-  ScrollView,
-  Text,
-  View,
-  Image,
-  StyleSheet,
-  Pressable,
-} from 'react-native';
-import {NavigationContainer, useNavigation} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {FeedItem} from 'react-native-rss-parser';
+import {StyleSheet} from 'react-native';
 import WebView from 'react-native-webview';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {FeedItemModel} from '../models/FeedItemModel';
-// import { IArticle } from '../components/Article';
 
 export const ArticleScreen = ({route, navigation}: any) => {
   const feedItem: FeedItemModel = route.params;
