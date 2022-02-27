@@ -54,9 +54,9 @@ export const ArticleList = (props: any) => {
             <Article
               key={item.item.id}
               item={item}
-              source={item.parent.name}
-              sourceUrl={item.parent.url}
-              logo={item.parent.logoUrl}
+              // source={item.parent.name}
+              // sourceUrl={item.parent.url}
+              // logo={item.parent.logoUrl}
             />
           );
         })}

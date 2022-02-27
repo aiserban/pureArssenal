@@ -1,6 +1,6 @@
 import * as rssParser from 'react-native-rss-parser';
 import {FeedItemModel} from '../models/FeedItemModel';
-import {FeedItem, Feed} from 'react-native-rss-parser';
+import {Feed} from 'react-native-rss-parser';
 
 const getFeedItems = async (url: string) => {
   return fetch(url)
@@ -36,14 +36,14 @@ export const getFeedItemModels = async (urls: string[]) => {
       feed.items.map(item => {
         const model: FeedItemModel = {
           item: (() => {
-            let tmp = item;
-            // some feeds don't provide a GUID field for items so we default to their url
+            const tmp = item;
+            // some feeds don't provide a GUID field for items, so we default to their url
             if (tmp.id === undefined) {
               tmp.id = item.links[0].url;
             }
             return tmp;
           })(),
-          parent: {
+          source: {
             name: feed.title,
             url: feed.links[0].url,
             logoUrl: feed.image.url,

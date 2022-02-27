@@ -7,13 +7,12 @@ import {ReadList} from '../data/data';
 import {StyleSheet} from 'react-native';
 import {FeedItemModel} from '../models/feedItemModel';
 
-export const Article = (props: any) => {
+export const Article = (props: {item: FeedItemModel}) => {
   const navigation = useNavigation();
   const item: FeedItemModel = props.item;
-  const [logo, setLogo] = useState<string>();
-  const source = props.source;
-  const sourceUrl = props.sourceUrl;
-  const published = props.item.item.published;
+  const source = item.source;
+  const [logoUrl, setLogoUrl] = useState<string>(source.logoUrl);
+  const published = item.item.published;
   const [displayPublished, setDisplayPublished] = useState('');
   const [isRead, setIsRead] = useState(false);
 
@@ -41,16 +40,16 @@ export const Article = (props: any) => {
     setDisplayPublished(hours + ':' + minutes);
 
     if (item.item.id === undefined) {
-      console.log(item.parent.name);
+      console.log(source.name);
     }
   };
 
   const computeFavicon = () => {
-    if (logo === undefined) {
+    if (logoUrl === undefined) {
       // TODO Should cache icon
-      setLogo('https://www.google.com/s2/favicons?domain=' + sourceUrl);
+      setLogoUrl('https://www.google.com/s2/favicons?domain=' + source.url);
     } else {
-      setLogo(props.logo);
+      setLogoUrl(item.source.logoUrl);
     }
   };
 
@@ -78,9 +77,9 @@ export const Article = (props: any) => {
           {item.item.description.trim()}
         </Text>
         <View style={styles.info}>
-          <Image source={{uri: logo}} style={styles.logo} />
+          <Image source={{uri: logoUrl}} style={styles.logo} />
           <View style={styles.sourceDateContainer}>
-            <Text style={styles.source}>{source}</Text>
+            <Text style={styles.source}>{source.name}</Text>
             <Text style={styles.date}>{displayPublished}</Text>
           </View>
         </View>
