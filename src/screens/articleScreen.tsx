@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
 import WebView from 'react-native-webview';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native';
 import {FeedItemModel} from '../models/FeedItemModel';
 
 export const ArticleScreen = ({route, navigation}: any) => {
