@@ -5,20 +5,37 @@ import { useState } from 'react'
 import { FeedListUrls } from '../data/data'
 
 const AddScreen = ({navigation}) => {
-    const [url, setUrl] = useState('');
+    const [input, setInput] = useState('');
+
+    // TODO: It's not good enoug. http://a is considered a good url
+    // TODO: Should also check if valid rss
+    const isValidUrl = () => {
+        console.log('Checking url');
+        let url: URL;
+        try {
+            url = new URL('', input.toLowerCase());
+            return true;
+        } catch (error) {
+            return false;
+        }
+    }
 
     const addFeed = () => {
-        console.log(url);
-        if (!FeedListUrls.includes(url.toLowerCase())) {
-            FeedListUrls.push(url.toLowerCase());
+        if (!FeedListUrls.includes(input.toLowerCase())) {
+            if (isValidUrl()){
+                FeedListUrls.push(input.toLowerCase());
+                navigation.goBack();
+            }
+            else {
+                alert('Input is not a valid URL');
+            }
         }
         console.log(FeedListUrls);
-        navigation.goBack();
     }
 
     return (
         <SafeAreaView>
-            <TextInput placeholder='https://cnn.com/rss' onChangeText={setUrl}/>
+            <TextInput placeholder='https://cnn.com/rss' onChangeText={setInput} autoCapitalize={'none'}/>
             <Button title='Add' onPress={addFeed}/>
         </SafeAreaView>
     )
