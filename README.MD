@@ -17,6 +17,6 @@ Currently* it fetches some (hardcoded) feeds. You can see the list of items retr
 
 Sure
 
-<img src="docs/items.png" alt="result" width="1000">
+<img src="docs/items.png" alt="result" width="400">
 
-<img src="docs/webview.png" alt="result" width="1000">
+<img src="docs/webview.png" alt="result" width="400">
