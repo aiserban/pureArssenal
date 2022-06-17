@@ -5,7 +5,7 @@ import { FlatList, SafeAreaView, SectionList, Text, View } from 'react-native';
 import { FeedListUrls } from '../data/data';
 
 const SettingsScreen = ({navigation}) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(['']);
   const isFocused = useIsFocused();
 
   const refreshData = () => {

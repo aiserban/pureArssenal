@@ -11,9 +11,8 @@ const AddScreen = ({navigation}) => {
     // TODO: Should also check if valid rss
     const isValidUrl = () => {
         console.log('Checking url');
-        let url: URL;
         try {
-            url = new URL('', input.toLowerCase());
+            new URL('', input.toLowerCase());
             return true;
         } catch (error) {
             return false;

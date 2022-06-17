@@ -15,11 +15,6 @@ export const ArticleScreen = ({route, navigation}: any) => {
       />
     </SafeAreaView>
   );
-
-  // TODO either use this with reader view or something, or remove it
-  function openBlacklistScreen() {
-    navigation.navigate('Blacklist', feedItem);
-  }
 };
 
 const styles = StyleSheet.create({
