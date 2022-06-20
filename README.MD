@@ -23,4 +23,4 @@ Sure
 
 <img src="docs/feeds.png" alt="list of feeds" width="400">
 
-<img src="docs/webview.png" alt="add feed" width="400">
+<img src="docs/addFeed.png" alt="add feed" width="400">
