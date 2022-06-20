@@ -7,6 +7,7 @@ import { FeedListUrls } from '../data/data';
 
 const SettingsScreen = ({navigation}) => {
   const [data, setData] = useState(['']);
+  useIsFocused();
 
   const refreshData = () => {
     setData(FeedListUrls);
