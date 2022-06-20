@@ -35,8 +35,11 @@ export const AddFeed = (props: any) => {
       <TextInput
         placeholder={'Feed or website URL'}
         autoCorrect={false}
+        autoComplete={'off'}
+        autoFocus={true}
         autoCapitalize={'none'}
         onChangeText={onChangeText}
+        defaultValue={'https://protv.ro/rss'} // TODO Remove this
       />
       <Button title="Search" onPress={search} />
       <View>

@@ -7,7 +7,7 @@ import { Pressable } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { PlatformColor } from 'react-native';
 import SettingsScreen from './src/screens/settingsScreen';
-import AddScreen from './src/screens/addFeed';
+import AddScreen from './src/screens/addScreen';
 
 const Stack = createNativeStackNavigator();
 const RootStack = createNativeStackNavigator();

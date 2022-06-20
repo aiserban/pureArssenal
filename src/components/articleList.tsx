@@ -31,7 +31,7 @@ export const ArticleList = (props: any) => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [FeedListUrls.length]);
 
   return (
     <View>
