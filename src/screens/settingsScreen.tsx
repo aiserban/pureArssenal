@@ -7,14 +7,10 @@ import { FeedListUrls } from '../data/data';
 
 const SettingsScreen = ({navigation}) => {
   const [data, setData] = useState(['']);
-  const isFocused = useIsFocused();
 
   const refreshData = () => {
-    console.log('Refreshing');
     setData(FeedListUrls);
   }
-
-  console.log('Is focused: ' + isFocused)
 
   useEffect(refreshData, [])
 

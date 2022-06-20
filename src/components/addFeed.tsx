@@ -5,7 +5,7 @@ import {FeedListUrls} from '../data/data';
 import {useState} from 'react';
 
 export const AddFeed = (props: any) => {
-  const [url, onChangeText] = useState('https://protv.ro/rss');
+  const [url, onChangeText] = useState('https://hotnews.ro/rss');
   const [result, setResult] = useState('');
   const [buttonDisabled, disableButton] = useState(true);
 

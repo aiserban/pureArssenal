@@ -20,7 +20,7 @@ export const ArticleList = (props: any) => {
     const items = await getFeedItemModels(FeedListUrls);
     setItemList(items);
     setIsLoading(false);
-    console.log('Feed list has been updated.');
+    console.log('Feed list has been updated.' + FeedListUrls.toString());
   };
 
   const refresh = async () => {
@@ -31,7 +31,7 @@ export const ArticleList = (props: any) => {
 
   useEffect(() => {
     getData();
-  }, [FeedListUrls.length]);
+  }, [FeedListUrls.length]);  // TODO Bad check here, as you can add 1 and remove 1 and the length will stay the same
 
   return (
     <View>
