@@ -5,7 +5,7 @@ import {FeedListUrls} from '../data/data';
 import {useState} from 'react';
 
 export const AddFeed = (props: any) => {
-  const [url, onChangeText] = useState('');
+  const [url, onChangeText] = useState('https://protv.ro/rss');
   const [result, setResult] = useState('');
   const [buttonDisabled, disableButton] = useState(true);
 
@@ -19,6 +19,7 @@ export const AddFeed = (props: any) => {
 
   const search = () => {
     disableButton(true);
+    console.log(url);
     getFeed(url)
       .then(feed => {
         setResult(feed.title);
@@ -39,7 +40,7 @@ export const AddFeed = (props: any) => {
         autoFocus={true}
         autoCapitalize={'none'}
         onChangeText={onChangeText}
-        defaultValue={'https://protv.ro/rss'} // TODO Remove this
+        defaultValue={url} // TODO Remove this
       />
       <Button title="Search" onPress={search} />
       <View>
