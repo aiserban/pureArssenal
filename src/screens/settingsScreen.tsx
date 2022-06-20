@@ -2,6 +2,7 @@ import { useIsFocused } from '@react-navigation/native';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { FlatList, SafeAreaView, SectionList, Text, View } from 'react-native';
+import { FeedUrlList } from '../components/feedUrlList';
 import { FeedListUrls } from '../data/data';
 
 const SettingsScreen = ({navigation}) => {
@@ -18,9 +19,9 @@ const SettingsScreen = ({navigation}) => {
   useEffect(refreshData, [])
 
   return (
-    <View>
-      <FlatList extraData={data} data={data} renderItem={({item}) => {return <Text>{item}</Text>}} />
-    </View>
+    <SafeAreaView>
+      <FeedUrlList data={data}/>
+    </SafeAreaView>
 
   );
 };

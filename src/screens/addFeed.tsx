@@ -7,7 +7,7 @@ import { FeedListUrls } from '../data/data'
 const AddScreen = ({navigation}) => {
     const [input, setInput] = useState('');
 
-    // TODO: It's not good enoug. http://a is considered a good url
+    // TODO: It's not good enough. http://a is considered a good url
     // TODO: Should also check if valid rss
     const isValidUrl = () => {
         console.log('Checking url');
