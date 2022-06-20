@@ -31,7 +31,7 @@ export const ArticleList = (props: any) => {
   };
 
   useEffect(() => {
-    getData();
+    refresh();
   }, [FeedListUrls.length]);  // TODO Bad check here, as you can add 1 and remove 1 and the length will stay the same
 
   return (
