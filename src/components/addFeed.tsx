@@ -13,6 +13,7 @@ export const AddFeed = (props: any) => {
   const addFeed = () => {
     if (!FeedListUrls.includes(url.toLowerCase())) {
       FeedListUrls.push(url.toLowerCase());
+      alert('Successfully subscribed to this feed');
     }
     console.log(FeedListUrls);
   };
