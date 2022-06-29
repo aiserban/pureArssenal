@@ -62,16 +62,20 @@ Error at `pod install`?
 Of course! All images are screenshots from the iOS Simulator
 
 List of articles
+
 <img src="docs/items.png" alt="main" width="400">
 
 
 The article itself, loaded in a Webview
+
 <img src="docs/webview.png" alt="webview" width="400">
 
 
 The list of feeds to pull data from
+
 <img src="docs/feeds.png" alt="list of feeds" width="400">
 
 
 The screen to add new feeds
+
 <img src="docs/addFeed.png" alt="add feed" width="400">
