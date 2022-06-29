@@ -42,7 +42,7 @@ Like all iOS apps, you NEED to have a **MacOS** device to be able to run it. You
 
 - `cd ios && pod install && cd ..` (should you have issues here run `pod repo update` and then `pod install` again)
 
-- `react-native start` - Should now build and start the app in the Simulator
+- `react-native run-ios` - Should now build and start the app in the Simulator
 
 I hope I haven't missed anything. Unfortunately, my dev environment is already set up and it's easy to miss a step that I might have done ages ago while working on something else.
 
