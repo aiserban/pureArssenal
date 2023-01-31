@@ -1,13 +1,13 @@
 import {Feed} from 'react-native-rss-parser';
 import {FeedItemModel} from '../models/FeedItemModel';
 
-export let ReadList: FeedItemModel[] = [];
-export let Exclusions: string[] = [];
-export let FeedList: Feed[] = [];
-export let FeedListUrls: string[] = [
-  // 'https://hotnews.ro/rss',
-  'https://digi24.ro/rss',
-  'https://www.gsp.ro/rss/fotbal-99.xml',
-  'https://protv.ro/rss'
+export const ReadList: FeedItemModel[] = [];
+export const Exclusions: string[] = [];
+export const FeedList: Feed[] = [];
+export const FeedListUrls: string[] = [
+    // 'https://hotnews.ro/rss',
+    'https://digi24.ro/rss',
+    'https://www.gsp.ro/rss/fotbal-99.xml',
+    'https://protv.ro/rss'
 ];
-export let ReadIdList: string[] = [];
+export const ReadIdList: string[] = [];

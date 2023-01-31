@@ -1,10 +1,22 @@
 import * as React from 'react';
-import { Animated, Text } from 'react-native';
-import { StyleSheet } from 'react-native';
-import { RectButton, Swipeable } from 'react-native-gesture-handler';
+import {Animated, Text} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {RectButton, Swipeable} from 'react-native-gesture-handler';
+import {FeedListUrls} from '../data/data';
 
 
-export const FeedUrl = ({ url }) => {
+export const FeedUrl = (props: { url }) => {
+    const url = props.url;
+    const deleteFeed = () => {
+        alert('Pressed')
+        const index = FeedListUrls.indexOf(url);
+        alert(index.toString());
+        if (index >= 0) {
+            FeedListUrls.splice(index, 1);
+            alert('Feed removed');
+        }
+    }
+
     const renderRightActions = (progress, dragX) => {
         const trans = dragX.interpolate({
             inputRange: [-50, 1],
@@ -12,11 +24,12 @@ export const FeedUrl = ({ url }) => {
         });
 
         return (
-            <RectButton style={styles.rectButton} onPress={this.close}>
+            <RectButton style={styles.rectButton} onPress={close}>
                 <Animated.Text
+                    onPress={deleteFeed}
                     style={[
                         {
-                            transform: [{ translateX: trans }],
+                            transform: [{translateX: trans}],
                             // textAlign: 'right'
                             // flex: 1
                         },
@@ -34,9 +47,6 @@ export const FeedUrl = ({ url }) => {
     )
 }
 
-
-
-// const styles = Sty
 const styles = StyleSheet.create({
     text: {
         fontFamily: 'Avenir',
@@ -49,8 +59,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 20,
         justifyContent: 'space-between',
-        flexDirection: 'column',
-        backgroundColor: 'red',
+        flexDirection: 'column'
     },
 
     rectButton: {
