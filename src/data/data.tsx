@@ -7,6 +7,7 @@ export const FeedList: Feed[] = [];
 export const FeedListUrls: string[] = [
     // 'https://hotnews.ro/rss',
     'https://digi24.ro/rss',
+    'http://rss.cnn.com/rss/edition.rss',
     'https://www.gsp.ro/rss/fotbal-99.xml',
     'https://protv.ro/rss'
 ];

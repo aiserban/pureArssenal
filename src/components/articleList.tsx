@@ -51,6 +51,7 @@ export const ArticleList = () => {
                 }>
                 {itemList.map(item => {
                     return (
+                        item.item.title && item.item.description &&
                         <Article
                             key={item.item.id}
                             item={item}

@@ -89,7 +89,7 @@ export const Article = (props: { item: FeedItemModel }) => {
 };
 
 const styles = StyleSheet.create({
-    title: {fontFamily: 'Avenir', fontWeight: '700'},
+    title: {fontFamily: 'Avenir', fontSize: 16, fontWeight: '500'},
     text: {fontFamily: 'Avenir'},
     read: {color: PlatformColor('systemGray')},
     logo: {
