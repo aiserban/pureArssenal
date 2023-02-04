@@ -69,17 +69,17 @@ export const Article = (props: { item: FeedItemModel }) => {
                 <Text
                     style={[styles.title, isRead ? styles.read : {}]}
                     numberOfLines={2}>
-                    {item.item.title.trim()}
+                    {item.item.title}
                 </Text>
                 <Text
                     style={[styles.text, isRead ? styles.read : {}]}
                     numberOfLines={3}>
-                    {item.item.description.trim()}
+                    {item.item.description}
                 </Text>
                 <View style={styles.info}>
                     <Image source={{uri: logoUrl}} style={styles.logo}/>
-                    <View style={styles.sourceDateContainer}>
-                        <Text style={styles.source}>{source.name}</Text>
+                    <View style={styles.infoContainer}>
+                        <Text numberOfLines={1} style={styles.source}>{source.name}</Text>
                         <Text style={styles.date}>{displayPublished}</Text>
                     </View>
                 </View>
@@ -116,9 +116,10 @@ const styles = StyleSheet.create({
         color: 'white',
         alignSelf: 'flex-end',
         marginRight: 3,
+        paddingLeft: 20
     },
     info: {flex: 1, flexDirection: 'row', marginTop: 4},
-    sourceDateContainer: {
+    infoContainer: {
         flex: 1,
         flexDirection: 'row',
         backgroundColor: PlatformColor('systemBlue'),

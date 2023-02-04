@@ -50,16 +50,17 @@ export const ArticleList = () => {
                     <RefreshControl refreshing={isRefreshing} onRefresh={refresh}/>
                 }>
                 {itemList.map(item => {
-                    return (
-                        item.item.title && item.item.description &&
-                        <Article
-                            key={item.item.id}
-                            item={item}
-                            // source={item.parent.name}
-                            // sourceUrl={item.parent.url}
-                            // logo={item.parent.logoUrl}
-                        />
-                    );
+                    if (item.item.id && item.item.description) {
+                        return (
+                            <Article
+                                key={item.item.id}
+                                item={item}
+                                // source={item.parent.name}
+                                // sourceUrl={item.parent.url}
+                                // logo={item.parent.logoUrl}
+                            />
+                        );
+                    }
                 })}
             </ScrollView>
         </View>
