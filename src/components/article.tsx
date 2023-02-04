@@ -2,10 +2,10 @@ import * as React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {useState, useEffect} from 'react';
 import {View, Text, Image, Pressable, PlatformColor} from 'react-native';
-
 import {ReadList} from '../data/data';
 import {StyleSheet} from 'react-native';
 import {FeedItemModel} from '../models/feedItemModel';
+import {formatRelative} from 'date-fns';
 
 export const Article = (props: { item: FeedItemModel }) => {
     const navigation = useNavigation();
@@ -26,22 +26,12 @@ export const Article = (props: { item: FeedItemModel }) => {
         markRead();
     };
 
-    // TODO Handle days other day today
     const computeDate = () => {
-        const date = new Date(published);
-        const hours = date.getHours();
-        let minutes;
-
-        if (date.getMinutes() < 10) {
-            minutes = '0' + date.getMinutes();
-        } else {
-            minutes = date.getMinutes();
-        }
-        setDisplayPublished(hours + ':' + minutes);
-
-        if (item.item.id === undefined) {
-            console.log(source.name);
-        }
+        const articleDate = new Date(published);
+        const now = new Date();
+        let formattedDate = formatRelative(articleDate, now);
+        formattedDate = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
+        setDisplayPublished(formattedDate);
     };
 
     const computeFavicon = () => {
