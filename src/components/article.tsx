@@ -1,11 +1,11 @@
 import * as React from 'react';
+import {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {useState, useEffect} from 'react';
-import {View, Text, Image, Pressable, PlatformColor} from 'react-native';
+import {Image, PlatformColor, Pressable, StyleSheet, Text, View} from 'react-native';
 import {ReadList} from '../data/data';
-import {StyleSheet} from 'react-native';
 import {FeedItemModel} from '../models/feedItemModel';
 import {formatRelative} from 'date-fns';
+import {enGB} from 'date-fns/locale';
 
 export const Article = (props: { item: FeedItemModel }) => {
     const navigation = useNavigation();
@@ -29,7 +29,7 @@ export const Article = (props: { item: FeedItemModel }) => {
     const computeDate = () => {
         const articleDate = new Date(published);
         const now = new Date();
-        let formattedDate = formatRelative(articleDate, now);
+        let formattedDate = formatRelative(articleDate, now, {locale: enGB});
         formattedDate = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
         setDisplayPublished(formattedDate);
     };
@@ -59,12 +59,12 @@ export const Article = (props: { item: FeedItemModel }) => {
                 <Text
                     style={[styles.title, isRead ? styles.read : {}]}
                     numberOfLines={2}>
-                    {item.item.title}
+                    {item.item.title.trim()}
                 </Text>
                 <Text
                     style={[styles.text, isRead ? styles.read : {}]}
                     numberOfLines={3}>
-                    {item.item.description}
+                    {item.item.description.trim()}
                 </Text>
                 <View style={styles.info}>
                     <Image source={{uri: logoUrl}} style={styles.logo}/>

@@ -1,13 +1,7 @@
 import * as rssParser from 'react-native-rss-parser';
 import {Feed} from 'react-native-rss-parser';
 import {FeedItemModel} from '../models/FeedItemModel';
-
-const getFeedItems = async (url: string) => {
-    return fetch(url)
-        .then(response => response.text())
-        .then(responseData => rssParser.parse(responseData))
-        .then(rss => rss.items);
-};
+import {removeHtml} from "../utils";
 
 export const getFeed = async (url: string) => {
     return fetch(url)
@@ -41,6 +35,7 @@ export const getFeedItemModels = async (urls: string[]) => {
                         if (tmp.id === undefined) {
                             tmp.id = item.links[0].url;
                         }
+                        tmp.description = removeHtml(tmp.description);
                         return tmp;
                     })(),
                     source: {

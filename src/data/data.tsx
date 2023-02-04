@@ -5,10 +5,12 @@ export const ReadList: FeedItemModel[] = [];
 export const Exclusions: string[] = [];
 export const FeedList: Feed[] = [];
 export const FeedListUrls: string[] = [
-    // 'https://hotnews.ro/rss',
+    'https://hotnews.ro/rss',
     'https://digi24.ro/rss',
     'http://rss.cnn.com/rss/edition.rss',
     'https://www.gsp.ro/rss/fotbal-99.xml',
-    'https://protv.ro/rss'
+    'https://protv.ro/rss',
+    'https://feeds.arstechnica.com/arstechnica/technology-lab',
+    'https://www.wired.com/feed/category/science/latest/rss'
 ];
 export const ReadIdList: string[] = [];
