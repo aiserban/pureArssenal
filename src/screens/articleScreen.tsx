@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {SafeAreaView} from 'react-native';
 import WebView from 'react-native-webview';
-import {FeedItemModel} from '../models/FeedItemModel';
+import {FeedItemModel} from '../models/feedItemModel';
 
 export const ArticleScreen = ({route}: never) => {
     const feedItem: FeedItemModel = route["params"];

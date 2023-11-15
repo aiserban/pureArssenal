@@ -22,7 +22,8 @@ export const Article = (props: { item: FeedItemModel }) => {
     };
 
     const openArticle = () => {
-        navigation.navigate('ArticleScreen', item);
+        // navigation.navigate('ArticleScreen', item);
+        navigation.navigate('ArticleReaderScreen', item);
         markRead();
     };
 

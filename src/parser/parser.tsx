@@ -1,6 +1,6 @@
 import * as rssParser from 'react-native-rss-parser';
 import {Feed} from 'react-native-rss-parser';
-import {FeedItemModel} from '../models/FeedItemModel';
+import {FeedItemModel} from '../models/feedItemModel';
 import {removeHtml} from "../utils";
 
 export const getFeed = async (url: string) => {

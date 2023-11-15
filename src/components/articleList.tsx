@@ -7,7 +7,7 @@ import {
     View,
 } from 'react-native';
 import {FeedListUrls} from '../data/data';
-import {FeedItemModel} from '../models/FeedItemModel';
+import {FeedItemModel} from '../models/feedItemModel';
 import {getFeedItemModels} from '../parser/parser';
 import {Article} from './article';
 
@@ -18,6 +18,7 @@ export const ArticleList = () => {
 
     const getData = async () => {
         const items = await getFeedItemModels(FeedListUrls);
+        console.log(items);
         setItemList(items);
         setIsLoading(false);
         console.log('Feed list has been updated.' + FeedListUrls.toString());

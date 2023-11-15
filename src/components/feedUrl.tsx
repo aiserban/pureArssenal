@@ -17,6 +17,10 @@ export const FeedUrl = (props: { url }) => {
         }
     }
 
+    const close = () => {
+        console.log('Closed')
+    }
+
     const renderRightActions = (progress, dragX) => {
         const trans = dragX.interpolate({
             inputRange: [-50, 1],
